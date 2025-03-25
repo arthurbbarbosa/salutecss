@@ -51,7 +51,7 @@ export const font_style = {
 
 // Letter Spacing
 export const font_space = {
-  '-font-spacing-[value]': (value) => `letter-spacing: -${value}`,
+  '\-font-spacing-[value]': (value) => `letter-spacing: -${value}`,
   'font-spacing-[value]': (value) => `letter-spacing: ${value}`
 }
 
