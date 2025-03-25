@@ -1,10 +1,10 @@
 import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { dirname, resolve } from 'node:path'
+
 import { styles } from '../styles/index.js'
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
+const __dirname = dirname(fileURLToPath(import.meta.url))
 
 export function resolve_html(HTML, defer) {
   const classes = [
@@ -15,29 +15,24 @@ export function resolve_html(HTML, defer) {
     )
   ]
 
-  let input = ''
+  const input = Array.from(classes).reduce((acc, name) => {
+    const style_name = name.replace(/\[(.+?)\]/, '[value]')
+    const style_value_match = name.match(/\[(.+?)\]/)
+    const style_value = style_value_match ? style_value_match[1] : null
 
-  for (const name of classes) {
-    if (typeof styles[name] === 'string') {
-      input += `.${name}{${styles[name]}}`
-      continue
+    if (styles[style_name]) {
+      const style_Function = styles[style_name]
+      const style_content = style_value ? style_Function(style_value) : style_Function()
+
+      acc += `.${name.replace(/\[/g, '\\[').replace(/\]/g, '\\]')}{${style_content}}`
     }
 
-    for (const [pattern, generator] of Object.entries(styles)) {
-      if (typeof generator === 'function') {
-        const match = name.match(new RegExp(`^${pattern.replace('[value]', '(.+)')}$`))
+    return acc
+  }, '')
 
-        if (match) {
-          const style = generator(match[1]).replace(/[[\]]/g, '').replace(/\_/g, ' ')
-          input += `.${name.replace(/[[\]#]/g, '\\$&')}{${style}}`
-        }
-      }
-    }
-  }
-
-  let presetscss = ''
-  presetscss += readFileSync(resolve(__dirname, '..', 'styles', 'presets', 'normalize.min.css'), 'utf-8')
-  presetscss += readFileSync(resolve(__dirname, '..', 'styles', 'presets', 'salutecss.min.css'), 'utf-8')
+  const presetscss = ['normalize.min.css', 'salutecss.min.css']
+    .map((file) => readFileSync(resolve(__dirname, '..', 'styles', 'presets', file), 'utf-8'))
+    .join('')
 
   return (presetscss + input).replace(/\n/g, '')
 }
