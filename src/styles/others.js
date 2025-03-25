@@ -187,10 +187,11 @@ export const text_wrap = {
 }
 
 export const transform = {
-  'transform-[value]': (value) => `transform: ${value}`
+  'transform-[value]': (value) => `transform: ${value}`,
 }
 
 export const translate = {
+  '-translate-[value]': (value) => `translate: ${value}`,
   'translate-[value]': (value) => `translate: ${value}`
 }
 
@@ -221,6 +222,7 @@ export const word_break = {
 }
 
 export const z_index = {
+  '-index-[value]': (value) => `z-index: -${value}`,
   'index-[value]': (value) => `z-index: ${value}`
 }
 
