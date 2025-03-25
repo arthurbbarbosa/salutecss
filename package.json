@@ -1,6 +1,6 @@
 {
   "name": "salutecss",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A enchanced, lightweight and fast utility-first CSS",
   "main": "./src/index.js",
   "author": "Arthur Barbosa <guevara.arthur@proton.me>",
