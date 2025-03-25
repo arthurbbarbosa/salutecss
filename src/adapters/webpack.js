@@ -7,7 +7,11 @@ export class SaluteWebpackPlugin {
   apply(compiler) {
     let built = false
 
-    built = true
-    compiler.hooks.done.tap('SaluteWebpackPlugin', () => !built && (built = true, build()))
+    compiler.hooks.done.tap('SaluteWebpackPlugin', () => {
+      if (!built) {
+        built = true
+        build()
+      }
+    })
   }
 }
