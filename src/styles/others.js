@@ -144,6 +144,11 @@ export const clip = {
   'clip-evenodd': 'clip-rule: evenodd'
 }
 
+export const line_height = {
+  'line-height-[value]': (value) => `line-height: ${value}`,
+  '\-line-height-[value]': (value) => `line-height: -${value}`,
+}
+
 export const overflow = {
   'overflow-visible': 'overflow: visible',
   'overflow-hidden': 'overflow: hidden',
