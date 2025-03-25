@@ -1,0 +1,25 @@
+{
+  "name": "salutecss",
+  "version": "1.0.0",
+  "description": "A enchanced, lightweight and fast utility-first CSS",
+  "main": "./src/index.js",
+  "author": "Arthur Barbosa <guevara.arthur@proton.me>",
+  "homepage": "https://github.com/arthurbbarbosa/salutecs#README",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arthurbbarbosa/salutecss.git"
+  },
+  "bugs": {
+    "url": "https://github.com/arthurbbarbosa/salutecss/issues",
+    "email": "guevara.arthur@proton.me"
+  },
+  "bin": {
+    "salute": "./src/bin/cli.js"
+  },
+  "keywords": [
+    "css",
+    "utility-first",
+    "css-in-js"
+  ],
+  "type": "module"
+}

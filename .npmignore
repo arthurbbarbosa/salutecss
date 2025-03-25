@@ -1,0 +1,11 @@
+# Editorconfig for text editors
+.editorconfig
+
+# Dependency directories
+node_modules/
+
+# Build folder for Next.js
+.next
+
+# Dependency lock files=
+*.lock

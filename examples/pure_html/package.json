@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "build": "salute build"
+  },
+  "dependencies": {
+    "salutecss": "^1.0.0"
+  }
+}
