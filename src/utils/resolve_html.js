@@ -21,8 +21,8 @@ export function resolve_html(HTML, defer) {
     const style_value = style_value_match ? style_value_match[1] : null
 
     if (styles[style_name]) {
-      const style_Function = styles[style_name]
-      const style_content = style_value ? style_Function(style_value) : style_Function()
+      const style_function = styles[style_name]
+      const style_content = style_value ? style_function(style_value) : style_function()
 
       acc += `.${name.replace(/\[/g, '\\[').replace(/\]/g, '\\]')}{${style_content}}`
     }
