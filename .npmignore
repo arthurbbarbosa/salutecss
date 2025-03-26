@@ -14,5 +14,5 @@ node_modules/
 examples/
 
 # README and Assets
-README.md
+*.md
 assets/

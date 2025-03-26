@@ -20,21 +20,15 @@ Examples:
 
 const parse_arguments = () => {
   const args = process.argv.slice(2)
-  const command = args[0] === 'build' || args[0] === 'help' ? args[0] : null
+  const command = ['build', 'help'].includes(args[0]) ? args[0] : null
   const options = {}
 
   for (let i = 0; i < args.length; i++) {
     if (args[i].startsWith('-')) {
       const key = args[i].replace(/^--?/, '')
 
-      if (['input', 'output', 'defer'].includes(key)) {
+      if (['input', 'output', 'defer'].includes(key))
         options[key] = args[++i] || (key === 'defer' ? [] : undefined)
-      }
-
-      if (key === 'help') {
-        print_help()
-        process.exit(0)
-      }
     }
   }
 

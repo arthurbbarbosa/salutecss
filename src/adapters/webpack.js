@@ -4,13 +4,18 @@ import { build } from '../index.js'
  * For Webpack Usage
  */
 export class SaluteWebpackPlugin {
-  apply(compiler) {
-    let built = false
+  constructor() {
+    this.has_built = false;
+  }
 
-    compiler.hooks.done.tap('SaluteWebpackPlugin', () => {
-      if (!built) {
-        built = true
-        build()
+  apply(compiler) {
+    compiler.hooks.watchRun.tap('SaluteWebpackPlugin', () => {
+      if (!this.has_built) {
+        try {
+          build()
+        } finally {
+          this.has_built = true
+        }
       }
     })
   }

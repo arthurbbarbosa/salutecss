@@ -1,6 +1,6 @@
 {
   "name": "salutecss",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "A enchanced, lightweight and fast utility-first CSS",
   "main": "./src/index.js",
   "author": "Arthur Barbosa <guevara.arthur@proton.me>",
@@ -21,5 +21,8 @@
     "utility-first",
     "css-in-js"
   ],
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "fast-glob": "^3.3.3"
+  }
 }

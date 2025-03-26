@@ -22,9 +22,12 @@ export function resolve_html(HTML, defer) {
     const style_value = name.match(/\[(.+?)\]/)
 
     if (styles[style_name]) {
+      const style = Object.entries(styles)
+        .find(([class_name]) => class_name === style_name)
+
       if (style_value?.[1])
-        input += `.${name.replace(/\[/, '\\[').replace(/\]/, '\\]')}{${Object.entries(styles).find(([class_name]) => class_name === style_name)[1](style_value[1].replace(/\_/g, ' '))}}`
-      else input += `.${name}{${Object.entries(styles).find(([class_name]) => class_name === name)[1]}}`
+        input += `.${name.replace(/\[/, '\\[').replace(/\]/, '\\]')}{${style[1](style_value[1].replace(/\_/g, ' '))}}`
+      else input += `.${name}{${style[1]}}`
     } else continue
   }
 
