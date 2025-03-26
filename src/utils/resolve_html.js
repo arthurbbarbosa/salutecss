@@ -23,7 +23,7 @@ export function resolve_html(HTML, defer) {
 
     if (styles[style_name]) {
       if (style_value?.[1])
-        input += `.${name.replace(/\[/, '\\[').replace(/\]/, '\\]')}{${Object.entries(styles).find(([class_name]) => class_name === style_name)[1](style_value[1])}}`
+        input += `.${name.replace(/\[/, '\\[').replace(/\]/, '\\]')}{${Object.entries(styles).find(([class_name]) => class_name === style_name)[1](style_value[1].replace(/\_/g, ' '))}}`
       else input += `.${name}{${Object.entries(styles).find(([class_name]) => class_name === name)[1]}}`
     } else continue
   }
