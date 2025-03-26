@@ -15,20 +15,18 @@ export function resolve_html(HTML, defer) {
     )
   ]
 
-  const input = Array.from(classes).reduce((acc, name) => {
+  let input = ''
+
+  for (const name of classes) {
     const style_name = name.replace(/\[(.+?)\]/, '[value]')
-    const style_value_match = name.match(/\[(.+?)\]/)
-    const style_value = style_value_match ? style_value_match[1] : null
+    const style_value = name.match(/\[(.+?)\]/)
 
     if (styles[style_name]) {
-      const style_function = styles[style_name]
-      const style_content = style_value ? style_function(style_value) : style_function()
-
-      acc += `.${name.replace(/\[/g, '\\[').replace(/\]/g, '\\]')}{${style_content}}`
-    }
-
-    return acc
-  }, '')
+      if (style_value?.[1])
+        input += `.${name.replace(/\[/, '\\[').replace(/\]/, '\\]')}{${Object.entries(styles).find(([class_name]) => class_name === style_name)[1](style_value[1])}}`
+      else input += `.${name}{${Object.entries(styles).find(([class_name]) => class_name === name)[1]}}`
+    } else continue
+  }
 
   const presetscss = ['normalize.min.css', 'salutecss.min.css']
     .map((file) => readFileSync(resolve(__dirname, '..', 'styles', 'presets', file), 'utf-8'))
