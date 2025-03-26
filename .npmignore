@@ -9,3 +9,10 @@ node_modules/
 
 # Dependency lock files=
 *.lock
+
+# Example Folder
+examples/
+
+# README and Assets
+README.md
+assets/
