@@ -27,7 +27,7 @@ function resolve_html(HTML, defer) {
       const style = Object.entries(styles).find(([name]) => name === style_name)
 
       if (style_value?.[1])
-        input += `.${class_name.replace(/\[/, '\\[').replace(/\]/, '\\]')}{${style[1](style_value[1].replace(/\_/g, ' '))}}`
+        input += `.${class_name.replace(/\[/, '\\[').replace(/\]/, '\\]').replace(/\#/, '\\#')}{${style[1](style_value[1].replace(/\_/g, ' '))}}`
       else input += `.${class_name}{${style[1]}}`
     } else continue
   }
