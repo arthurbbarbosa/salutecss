@@ -200,6 +200,10 @@ const translate = {
   'translate-[value]': (value) => `translate: ${value}`
 }
 
+const border_radius = {
+  'round-[value]': (value) => `border-radius: ${value}`
+}
+
 const user_select = {
   'select-none': 'user-select: none',
   'select-text': 'user-select: text',
@@ -235,6 +239,7 @@ module.exports = {
   ...accent_color,
   ...color,
   ...background,
+  ...border_radius,
   ...backdrop,
   ...shadow,
   ...caret,
@@ -251,6 +256,7 @@ module.exports = {
   ...size,
   ...cursor,
   ...display,
+  ...line_height,
   ...clip,
   ...overflow,
   ...rotate,
