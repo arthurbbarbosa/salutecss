@@ -7,9 +7,9 @@ function load_config() {
   const config = require(resolve(process.cwd(), 'salute.config.js'))
 
   return {
-    input: config.content,
-    output: config.output || 'salute.css',
-    defer: config.defer || []
+    input: config.content || config.default?.content,
+    output: config.output || config.default?.output || 'salute.css',
+    defer: config.defer || config.default?.defer || []
   }
 }
 

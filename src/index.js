@@ -9,15 +9,19 @@ const { load_config } = require('./utils/load_config.js')
  * @type {import('../index').build}
  */
 function build(args) {
-  const { input, output = 'salute.css', defer = [] } =
-    args.input ? args : load_config()
+  try {
+    const { input, output = 'salute.css', defer = [] } =
+      args?.input !== undefined ? args : load_config()
 
-  const css = globSync(input).reduce((acc, file) => {
-    const html = resolve_html(readFileSync(resolve(file), 'utf-8'), defer)
-    return acc + html
-  }, '')
+    const css = globSync(input).reduce((acc, file) => {
+      const html = resolve_html(readFileSync(resolve(file), 'utf-8'), defer)
+      return acc + html
+    }, '')
 
-  writeFileSync(resolve(output), css)
+    writeFileSync(resolve(output), css)
+  } catch(err) {
+    console.log('SaluteCSS Error: Your Configuration File is Invalid')
+  }
 }
 
 module.exports.build = build
