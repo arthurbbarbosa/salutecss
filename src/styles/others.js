@@ -200,6 +200,10 @@ const translate = {
   'translate-[value]': (value) => `translate: ${value}`
 }
 
+const outline = {
+  'outline-[value]': (value) => `outline: ${value}`
+}
+
 const border_radius = {
   'round-[value]': (value) => `border-radius: ${value}`
 }
@@ -244,6 +248,7 @@ module.exports = {
   ...shadow,
   ...caret,
   ...animation,
+  ...outline,
   ...transition,
   ...align_content,
   ...align_items,
