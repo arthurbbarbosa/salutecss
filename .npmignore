@@ -1,6 +1,3 @@
-# Editorconfig for text editors
-.editorconfig
-
 # Dependency directories
 node_modules/
 
