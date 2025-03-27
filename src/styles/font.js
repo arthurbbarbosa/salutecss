@@ -1,5 +1,5 @@
 // Font Weight
-export const font_weight = {
+const font_weight = {
   'font-thin': 'font-weight: 100',
   'font-extra-light': 'font-weight: 200',
   'font-light': 'font-weight: 300',
@@ -12,7 +12,7 @@ export const font_weight = {
 }
 
 // Font Family
-export const font_family = {
+const font_family = {
   'font-family-serif': 'font-family: ui-serif',
   'font-family-sans-serif': 'font-family: ui-sans-serif',
   'font-family-monospace': 'font-family: ui-monospace',
@@ -22,7 +22,7 @@ export const font_family = {
 }
 
 // Font Size
-export const font_size = {
+const font_size = {
   'font-size-10': 'font-size: 0.625em',
   'font-size-12': 'font-size: 0.75em',
   'font-size-14': 'font-size: 0.875em',
@@ -45,17 +45,17 @@ export const font_size = {
 }
 
 // Font Style
-export const font_style = {
+const font_style = {
   'italic': 'font-style: italic'
 }
 
 // Letter Spacing
-export const font_space = {
+const font_space = {
   '\-font-spacing-[value]': (value) => `letter-spacing: -${value}`,
   'font-spacing-[value]': (value) => `letter-spacing: ${value}`
 }
 
-export default {
+module.exports = {
   ...font_weight,
   ...font_family,
   ...font_size,

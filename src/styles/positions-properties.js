@@ -1,5 +1,5 @@
 // Flexbox
-export const flex = {
+const flex = {
   'flex-[value]': (value) => `flex: ${value}`,
   'flex-column': 'flex-direction: column',
   'flex-row': 'flex-direction: row',
@@ -11,18 +11,18 @@ export const flex = {
 }
 
 // Float
-export const float = {
+const float = {
   'to-right': 'float: right',
   'to-left': 'float: left'
 }
 
 // Gap
-export const gap = {
+const gap = {
   'gap-[value]': (value) => `gap: ${value}`
 }
 
 // Grid
-export const grid = {
+const grid = {
   'grid-[value]': (value) => `grid: ${value}`,
   'grid-columns-[value]': (value) => `grid-column: ${value}`,
   'grid-rows-[value]': (value) => `grid-rows: ${value}`,
@@ -31,7 +31,7 @@ export const grid = {
 }
 
 // Justify Content
-export const justify = {
+const justify = {
   'justify-start': 'justify-content: start',
   'justify-end': 'justify-content: end',
   'justify-center': 'justify-content: center',
@@ -42,7 +42,7 @@ export const justify = {
 }
 
 // Margin
-export const margin = {
+const margin = {
   'margin-[value]': (value) => `margin: ${value}`,
   'margin-top-[value]': (value) => `margin-top: ${value}`,
   'margin-bottom-[value]': (value) => `margin-bottom: ${value}`,
@@ -61,7 +61,7 @@ export const margin = {
 }
 
 // Padding
-export const padding = {
+const padding = {
   'padding-[value]': (value) => `padding: ${value}`,
   'padding-top-[value]': (value) => `padding-top: ${value}`,
   'padding-bottom-[value]': (value) => `padding-bottom: ${value}`,
@@ -80,7 +80,7 @@ export const padding = {
 }
 
 // Place Content
-export const place_content = {
+const place_content = {
   'place-start': 'place-content: start',
   'place-end': 'place-content: end',
   'place-center': 'place-content: center',
@@ -90,7 +90,7 @@ export const place_content = {
   'place-stretch': 'place-content: stretch'
 }
 
-export default {
+module.exports = {
   ...flex,
   ...float,
   ...gap,

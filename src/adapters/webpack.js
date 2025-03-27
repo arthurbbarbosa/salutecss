@@ -1,9 +1,10 @@
-import { build } from '../index.js'
+const { build } = require('../index.js')
 
 /**
  * For Webpack Usage
+ * @type {import('../../index.d.ts').SaluteWebpackPlugin}
  */
-export class SaluteWebpackPlugin {
+class SaluteWebpackPlugin {
   constructor() {
     this.has_built = false;
   }
@@ -20,3 +21,5 @@ export class SaluteWebpackPlugin {
     })
   }
 }
+
+module.exports.SaluteWebpackPlugin = SaluteWebpackPlugin

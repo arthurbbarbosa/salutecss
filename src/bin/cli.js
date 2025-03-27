@@ -1,17 +1,16 @@
 #!/usr/bin/env node
-import { build } from '../index.js'
+const { build } = require('../index.js')
 
 const print_help = () => console.log(`Usage:
   salute [command] [options]
 
 Commands:
   build     Compile styles once
+  help      Shows the Help
 
 Options:
-  -i, --input    Input file/directory path  (required)
-  -o, --output   Output file path           (default: salute.css)
-  -d, --defer    Defer Classes              (default: [''])
-  -h, --help     Show this help
+  --input    Input file/directory path  (required)
+  --output   Output file path           (default: salute.css)
 
 Examples:
   $ salute build --input src/index.html
@@ -20,29 +19,27 @@ Examples:
 
 const parse_arguments = () => {
   const args = process.argv.slice(2)
-  const command = ['build', 'help'].includes(args[0]) ? args[0] : null
   const options = {}
 
   for (let i = 0; i < args.length; i++) {
-    if (args[i].startsWith('-')) {
+    if (args[i].startsWith('--')) {
       const key = args[i].replace(/^--?/, '')
 
-      if (['input', 'output', 'defer'].includes(key))
-        options[key] = args[++i] || (key === 'defer' ? [] : undefined)
+      if (['input', 'output'].includes(key))
+        options[key] = args[++i]
     }
   }
 
-  return { command, ...options }
+  return { command: args[0], ...options }
 }
 
-(async () => {
-  const { command, input, output, defer } = parse_arguments()
+const { command, ...args } = parse_arguments()
 
-  if (command === 'build') {
-    const start = Date.now()
-    await build({ input, output, defer })
+if (command === 'build') {
+  const start = Date.now()
+  build({ args })
 
-    console.log(`SaluteCSS: Build successfully completed in ${Date.now() - start}ms`)
-  } else if (command === 'help') print_help()
-  else console.log('Try to get more informations at "salute help"')
-})()
+  console.log(`SaluteCSS: Build successfully completed in ${Date.now() - start}ms`)
+}
+else if (command === 'help') print_help()
+else console.log('Invalid Command: try to get more informations at "salute help"')

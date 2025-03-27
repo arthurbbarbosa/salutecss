@@ -1,21 +1,21 @@
 // Color and Background
-export const accent_color = { 'accent-[value]': (value) => `accent-color: ${value}` }
-export const color = { 'color-[value]': (value) => `color: ${value}` }
-export const background = { 'background-[value]': (value) => `background: ${value}` }
-export const backdrop = { 'backdrop-[value]': (value) => `backdrop-filter: ${value}` }
-export const shadow = { 'shadow-[value]': (value) => `box-shadow: ${value}` }
-export const caret = { 'caret-[value]': (value) => `caret-color: ${value}` }
+const accent_color = { 'accent-[value]': (value) => `accent-color: ${value}` }
+const color = { 'color-[value]': (value) => `color: ${value}` }
+const background = { 'background-[value]': (value) => `background: ${value}` }
+const backdrop = { 'backdrop-[value]': (value) => `backdrop-filter: ${value}` }
+const shadow = { 'shadow-[value]': (value) => `box-shadow: ${value}` }
+const caret = { 'caret-[value]': (value) => `caret-color: ${value}` }
 
 // Animation and Transition
-export const animation = { 'animate-[value]': (value) => `animation: ${value}` }
-export const transition = {
+const animation = { 'animate-[value]': (value) => `animation: ${value}` }
+const transition = {
   'transition-fade-in': 'transition: opacity 250ms ease-in, visibility 0ms ease-in 0ms',
   'transition-color': 'transition: color, background-color, border-color, text-decoration-color, fill, stroke 150ms linear',
   'transition-[value]': (value) => `transition: ${value}`
 }
 
 // Alignment
-export const align_content = {
+const align_content = {
   'align-content-center': 'align-content: center',
   'align-content-start': 'align-content: start',
   'align-content-end': 'align-content: end',
@@ -28,7 +28,7 @@ export const align_content = {
   'align-content-[value]': (value) => `align-content: ${value}`
 }
 
-export const align_items = {
+const align_items = {
   'align-items-start': 'align-items: flex-start',
   'align-items-end': 'align-items: flex-end',
   'align-items-center': 'align-items: center',
@@ -37,7 +37,7 @@ export const align_items = {
   'align-items-[value]': (value) => `align-items: ${value}`
 }
 
-export const align_self = {
+const align_self = {
   'align-self-auto': 'align-self: auto',
   'align-self-start': 'align-self: flex-start',
   'align-self-end': 'align-self: flex-end',
@@ -48,12 +48,12 @@ export const align_self = {
 }
 
 // Visibility and Opacity
-export const visibility = {
+const visibility = {
   'visible': 'visibility: visible',
   'invisible': 'visibility: hidden'
 }
 
-export const opacity = {
+const opacity = {
   'opacity-0': 'opacity: 0',
   'opacity-25': 'opacity: .25',
   'opacity-50': 'opacity: .50',
@@ -63,14 +63,14 @@ export const opacity = {
 }
 
 // Appearance
-export const appearance = {
+const appearance = {
   'appearance-none': 'appearance: none',
   'appearance-auto': 'appearance: auto',
   'appearance-textfield': 'appearance: textfield'
 }
 
 // Border
-export const border = {
+const border = {
   'border-size-[value]': (value) => `border-width: ${value}`,
   'border-[value]': (value) => `border: ${value}`,
   'border-top-size-[value]': (value) => `border-top-width: ${value}`,
@@ -84,7 +84,7 @@ export const border = {
 }
 
 // Positioning
-export const position = {
+const position = {
   'static': 'position: static',
   'relative': 'position: relative',
   'absolute': 'position: absolute',
@@ -93,7 +93,7 @@ export const position = {
 }
 
 // Size
-export const size = {
+const size = {
   'height-[value]': (value) => `height: ${value}`,
   'width-[value]': (value) => `width: ${value}`,
   'size-[value]': (value) => `width: ${value}; height: ${value}`,
@@ -118,7 +118,7 @@ export const size = {
 }
 
 // Other properties
-export const cursor = {
+const cursor = {
   'cursor-[value]': (value) => `cursor: ${value}`,
   'cursor-pointer': 'cursor: pointer',
   'cursor-wait': 'cursor: wait',
@@ -131,25 +131,25 @@ export const cursor = {
   'cursor-resize': 'cursor: all-resize'
 }
 
-export const display = {
+const display = {
   'block': 'display: block',
   'inline': 'display: inline',
   'flex': 'display: flex',
   'grid': 'display: grid'
 }
 
-export const clip = {
+const clip = {
   'clip-[value]': (value) => `clip-path: ${value}`,
   'clip-nonzero': 'clip-rule: nonzero',
   'clip-evenodd': 'clip-rule: evenodd'
 }
 
-export const line_height = {
+const line_height = {
   'line-height-[value]': (value) => `line-height: ${value}`,
   '\-line-height-[value]': (value) => `line-height: -${value}`,
 }
 
-export const overflow = {
+const overflow = {
   'overflow-visible': 'overflow: visible',
   'overflow-hidden': 'overflow: hidden',
   'overflow-x-visible': 'overflow-x: visible',
@@ -158,11 +158,11 @@ export const overflow = {
   'overflow-y-hidden': 'overflow-y: hidden'
 }
 
-export const rotate = {
+const rotate = {
   'rotate-[value]': (value) => `rotate: ${value}`
 }
 
-export const text_align = {
+const text_align = {
   'text-center': 'text-align: center',
   'text-start': 'text-align: start',
   'text-end': 'text-align: end',
@@ -170,7 +170,7 @@ export const text_align = {
   'text-right': 'text-align: right'
 }
 
-export const text_decoration = {
+const text_decoration = {
   'underline': 'text-decoration: underline',
   'underline-[value]': (value) => `text-decoration-color: ${value}`,
   'underline-solid': 'text-decoration-style: solid',
@@ -180,40 +180,40 @@ export const text_decoration = {
   'underline-wavy': 'text-decoration-style: wavy'
 }
 
-export const text_transform = {
+const text_transform = {
   'capitalize': 'text-transform: capitalize',
   'uppercase': 'text-transform: uppercase',
   'lowercase': 'text-transform: lowercase'
 }
 
-export const text_wrap = {
+const text_wrap = {
   'text-wrap': 'text-wrap: wrap',
   'text-nowrap': 'text-wrap: nowrap'
 }
 
-export const transform = {
+const transform = {
   'transform-[value]': (value) => `transform: ${value}`,
 }
 
-export const translate = {
+const translate = {
   '\-translate-[value]': (value) => `translate: ${value}`,
   'translate-[value]': (value) => `translate: ${value}`
 }
 
-export const user_select = {
+const user_select = {
   'select-none': 'user-select: none',
   'select-text': 'user-select: text',
   'select-all': 'user-select: all'
 }
 
-export const vertical_align = {
+const vertical_align = {
   'align-baseline': 'vertical-align: baseline',
   'align-top': 'vertical-align: top',
   'align-middle': 'vertical-align: middle',
   'align-bottom': 'vertical-align: bottom'
 }
 
-export const white_space = {
+const white_space = {
   'space-pre': 'white-space: pre',
   'space-prewrap': 'white-space: pre-wrap',
   'space-preline': 'white-space: pre-line',
@@ -221,17 +221,17 @@ export const white_space = {
   'space-collapse': 'white-space: collapse'
 }
 
-export const word_break = {
+const word_break = {
   'word-break': 'word-break: break-all',
   'word-keep': 'word-break: keep-all'
 }
 
-export const z_index = {
+const z_index = {
   '\-index-[value]': (value) => `z-index: -${value}`,
   'index-[value]': (value) => `z-index: ${value}`
 }
 
-export default {
+module.exports = {
   ...accent_color,
   ...color,
   ...background,

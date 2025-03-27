@@ -1,28 +1,23 @@
-import glob from 'fast-glob'
+const { globSync } = require('fast-glob')
+const { resolve } = require('node:path')
+const { writeFileSync, readFileSync } = require('node:fs')
 
-import { writeFile, readFile } from 'node:fs/promises'
-import { resolve } from 'node:path'
-
-import { SaluteWebpackPlugin } from './adapters/webpack.js'
-import { resolve_html } from './utils/resolve_html.js'
-import { load_config } from './utils/load_config.js'
+const { resolve_html } = require('./utils/resolve_html.js')
+const { load_config } = require('./utils/load_config.js')
 
 /**
- * Build the CSS File based on the HTML/JSX File
- * @param {{ input: string, output?: string, defer?: string[] }} args
- * @returns {Promise<void>}
+ * @type {import('../index').build}
  */
-async function build(args = {}) {
+function build(args) {
   const { input, output = 'salute.css', defer = [] } =
-    args.input ? args : await load_config()
+    args.input ? args : load_config()
 
-  const files = await glob.glob(Array.isArray(input) ? input : input.split(' '))
-  const css = await Promise.all(
-    files.map(async (file) => resolve_html(await readFile(resolve(file), 'utf-8'), defer))
-  )
-    .then((results) => results.join(''))
+  const css = globSync(input).reduce((acc, file) => {
+    const html = resolve_html(readFileSync(resolve(file), 'utf-8'), defer)
+    return acc + html
+  }, '')
 
-  await writeFile(resolve(output), css.trim())
+  writeFileSync(resolve(output), css)
 }
 
-export { build, SaluteWebpackPlugin }
+module.exports.build = build

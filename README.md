@@ -13,7 +13,7 @@ $ salute build
 ## Benchmarking
 | Library | Compile Time (Ms) |
 | ------- | ------- |
-| SaluteCSS | ~ 12ms |
+| SaluteCSS | ~ 7ms |
 | TailwindCSS | ~ 50ms |
 
 ## Salute CLI
@@ -23,11 +23,11 @@ Usage:
 
 Commands:
   build     Compile styles once
+  help      Shows the Help
 
 Options:
-  -i, --input    Input file/directory path  (required)
-  -o, --output   Output file path           (default: salute.css)
-  -d, --defer    Defer Classes              (default: [])
+  --input    Input file/directory path  (required)
+  --output   Output file path           (default: salute.css)
 
 Examples:
   $ salute build --input src/index.html

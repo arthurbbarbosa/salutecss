@@ -1,6 +1,7 @@
-import FONT from './font.js'
-import OTHERS from './others.js'
-import CUSTOMIZED from './customized.js'
-import POSITIONS from './positions-properties.js'
+const FONT = require('./font.js')
+const OTHERS = require('./others.js')
+const CUSTOMIZED = require('./customized.js')
+const POSITIONS = require('./positions-properties.js')
 
-export const styles = { ...FONT, ...OTHERS, ...POSITIONS, ...CUSTOMIZED }
+const styles = { ...FONT, ...OTHERS, ...POSITIONS, ...CUSTOMIZED }
+module.exports.styles = styles

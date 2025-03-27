@@ -1,8 +1,10 @@
-import { pathToFileURL } from 'node:url'
-import { resolve } from 'node:path'
+const { resolve } = require('node:path')
 
-export const load_config = async () => {
-  const { default: config } = await import(pathToFileURL(resolve(process.cwd(), 'salute.config.js')))
+/**
+ * @type {import('../../index.d.ts').load_config}
+ */
+function load_config() {
+  const config = require(resolve(process.cwd(), 'salute.config.js'))
 
   return {
     input: config.content,
@@ -10,3 +12,5 @@ export const load_config = async () => {
     defer: config.defer || []
   }
 }
+
+module.exports.load_config = load_config
