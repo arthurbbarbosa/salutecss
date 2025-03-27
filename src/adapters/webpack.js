@@ -6,17 +6,18 @@ const { build } = require('../index.js')
  */
 class SaluteWebpackPlugin {
   constructor() {
-    this.has_built = false;
+    this.build_count = 0;
+    this.last_build_time = 0;
   }
 
   apply(compiler) {
     compiler.hooks.watchRun.tap('SaluteWebpackPlugin', () => {
-      if (!this.has_built) {
-        try {
-          build()
-        } finally {
-          this.has_built = true
-        }
+      const now = Date.now()
+
+      if (now - this.last_build_time > 500) {
+        this.build_count++
+        build()
+        this.last_build_time = now
       }
     })
   }

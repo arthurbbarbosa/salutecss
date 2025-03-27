@@ -24,8 +24,6 @@ export function load_config(): ConfigFile
  * }
  */
 export class SaluteWebpackPlugin {
-  has_built: boolean
-
   constructor()
   apply(compiler: Compiler): void
 }
