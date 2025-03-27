@@ -177,7 +177,8 @@ const text_decoration = {
   'underline-double': 'text-decoration-style: double',
   'underline-dotted': 'text-decoration-style: dotted',
   'underline-dashed': 'text-decoration-style: dashed',
-  'underline-wavy': 'text-decoration-style: wavy'
+  'underline-wavy': 'text-decoration-style: wavy',
+  'no-decoration': 'text-decoration: none'
 }
 
 const text_transform = {

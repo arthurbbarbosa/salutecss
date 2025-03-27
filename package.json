@@ -1,6 +1,6 @@
 {
   "name": "salutecss",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "description": "A enchanced, lightweight and fast utility-first CSS",
   "types": "./index.d.ts",
   "main": "./index.js",
