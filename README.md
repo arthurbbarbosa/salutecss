@@ -43,9 +43,8 @@ Examples:
 - Modern-Normalize ([Click Here](https://github.com/sindresorhus/modern-normalize))
 
 ## Todo
-- Add Selectors for Styles
 - Create a native glob method
-- Do it Faster
+- Documentation (Under Development - Coming Soon)
 
 ## Contributing
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.

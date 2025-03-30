@@ -6,14 +6,29 @@ import type { Compiler } from 'webpack'
 export function build(args: ConfigFile): void
 
 /**
- * Resolve the HTML returning the Style File
- */
-export function resolve_html(HTML: string, defer?: string[] | never[]): string
-
-/**
  * Load the Config File returning the Configuration
  */
-export function load_config(): ConfigFile
+export function resolveConfigFile(): ConfigFile
+
+/**
+ * Parse Selectors Classes
+ */
+export function parseSelector(className: string): string
+
+/**
+ * Parse Media Queries Classes
+ */
+export function parseMediaQuery(className: string): string
+
+/**
+ * Parse Classes
+ */
+export function parseClass(className: string): string
+
+/**
+ * Parse Stylesheet
+ */
+export function parseStyle(style: string, defer?: string[] | never[]): string
 
 /**
  * For Webpack Usage

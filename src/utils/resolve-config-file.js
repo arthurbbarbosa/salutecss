@@ -1,9 +1,9 @@
 const { resolve } = require('node:path')
 
 /**
- * @type {import('../../index.d.ts').load_config}
+ * @type {import('../../index').resolveConfigFile}
  */
-function load_config() {
+function resolveConfigFile() {
   const config = require(resolve(process.cwd(), 'salute.config.js'))
 
   return {
@@ -13,4 +13,4 @@ function load_config() {
   }
 }
 
-module.exports.load_config = load_config
+module.exports.resolveConfigFile = resolveConfigFile

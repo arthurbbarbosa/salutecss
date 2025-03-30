@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const { build } = require('../index.js')
 
-const print_help = () => console.log(`Usage:
+const showHelpCommand = () => console.log(`Usage:
   salute [command] [options]
 
 Commands:
@@ -17,7 +17,7 @@ Examples:
   $ salute build --input src/**/*.js --output public/styles.css
   $ salute build`)
 
-const parse_arguments = () => {
+const parseArguments = () => {
   const args = process.argv.slice(2)
   const options = {}
 
@@ -33,7 +33,7 @@ const parse_arguments = () => {
   return { command: args[0], ...options }
 }
 
-const { command, ...args } = parse_arguments()
+const { command, ...args } = parseArguments()
 
 if (command === 'build') {
   const start = Date.now()
@@ -41,5 +41,5 @@ if (command === 'build') {
 
   console.log(`SaluteCSS: Build successfully completed in ${Date.now() - start}ms`)
 }
-else if (command === 'help') print_help()
+else if (command === 'help') showHelpCommand()
 else console.log('Invalid Command: try to get more informations at "salute help"')

@@ -1,24 +1,22 @@
+const { writeFileSync, readFileSync } = require('node:fs')
 const { globSync } = require('fast-glob')
 const { resolve } = require('node:path')
-const { writeFileSync, readFileSync } = require('node:fs')
 
-const { resolve_html } = require('./utils/resolve_html.js')
-const { load_config } = require('./utils/load_config.js')
+const { resolveConfigFile } = require('./utils/resolve-config-file.js')
+const { parseStyle } = require('./infrastructure/index.js')
 
 /**
  * @type {import('../index').build}
  */
 function build(args) {
   try {
-    const { input, output = 'salute.css', defer = [] } =
-      args?.input !== undefined ? args : load_config()
+    const { input, output = 'salute.css', defer = [] } = args?.input !== undefined ? args : resolveConfigFile()
 
-    const css = globSync(input).reduce((acc, file) => {
-      const html = resolve_html(readFileSync(resolve(file), 'utf-8'), defer)
-      return acc + html
-    }, '')
+    const stylesheet = globSync(input)
+      .map(file => parseStyle(readFileSync(resolve(file), 'utf-8'), defer))
+      .join('')
 
-    writeFileSync(resolve(output), css)
+    writeFileSync(resolve(output), stylesheet)
   } catch(err) {
     console.log('SaluteCSS Error: Your Configuration File is Invalid')
   }
