@@ -21,9 +21,10 @@ function parseStyle(style, defer) {
     .map((file) => readFileSync(resolve(__dirname, '..', '..', 'styles', 'presets', file), 'utf-8'))
     .join('')
 
-  const stylesheetParts = classesName.map((resolvedClass) =>
-    PRESETS + parseClass(parseSelector(parseMediaQuery(resolvedClass)))
-  )
+  const stylesheetParts = classesName.map((resolvedClass) => {
+    const parsedClass = parseClass(parseSelector(parseMediaQuery(resolvedClass)))
+    return parsedClass && PRESETS + parsedClass
+  })
 
   return stylesheetParts.join('').replace(/\n/g, '')
 }

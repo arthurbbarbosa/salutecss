@@ -23,7 +23,7 @@ export function parseMediaQuery(className: string): string
 /**
  * Parse Classes
  */
-export function parseClass(className: string): string
+export function parseClass(className: string): string | null
 
 /**
  * Parse Stylesheet

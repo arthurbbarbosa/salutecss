@@ -8,7 +8,7 @@ function parseClass(className) {
   const regex = valueToPrimitiveValue(className)
   const value = typeof classes[regex] === 'function' ? classes[regex](getValue(className)) : classes[regex]
 
-  return `.${resolveCSSClass(className)}{${value}}`
+  return value ? `.${resolveCSSClass(className)}{${value}}` : null
 }
 
 module.exports.parseClass = parseClass
