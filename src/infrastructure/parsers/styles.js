@@ -21,12 +21,12 @@ function parseStyle(style, defer) {
     .map((file) => readFileSync(resolve(__dirname, '..', '..', 'styles', 'presets', file), 'utf-8'))
     .join('')
 
-  const stylesheetParts = classesName.map((resolvedClass) => {
-    const parsedClass = parseClass(parseSelector(parseMediaQuery(resolvedClass)))
-    return parsedClass && parsedClass
-  })
+  const stylesheet = classesName
+    .map((resolvedClass) => parseMediaQuery(resolvedClass) || parseSelector(resolvedClass) || parseClass(resolvedClass))
+    .filter(Boolean)
+    .join('')
 
-  return (PRESETS + stylesheetParts.join('')).replace(/\n/g, '')
+  return (PRESETS + stylesheet).replace(/\n/g, '')
 }
 
 module.exports.parseStyle = parseStyle

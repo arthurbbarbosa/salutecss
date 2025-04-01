@@ -13,12 +13,12 @@ export function resolveConfigFile(): ConfigFile
 /**
  * Parse Selectors Classes
  */
-export function parseSelector(className: string): string
+export function parseSelector(className: string): string | null
 
 /**
  * Parse Media Queries Classes
  */
-export function parseMediaQuery(className: string): string
+export function parseMediaQuery(className: string): string | null
 
 /**
  * Parse Classes
