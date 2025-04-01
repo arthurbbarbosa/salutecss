@@ -23,10 +23,10 @@ function parseStyle(style, defer) {
 
   const stylesheetParts = classesName.map((resolvedClass) => {
     const parsedClass = parseClass(parseSelector(parseMediaQuery(resolvedClass)))
-    return parsedClass && PRESETS + parsedClass
+    return parsedClass && parsedClass
   })
 
-  return stylesheetParts.join('').replace(/\n/g, '')
+  return (PRESETS + stylesheetParts.join('')).replace(/\n/g, '')
 }
 
 module.exports.parseStyle = parseStyle
