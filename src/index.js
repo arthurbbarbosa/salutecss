@@ -18,7 +18,7 @@ function build(args) {
 
     writeFileSync(resolve(output), stylesheet)
   } catch(err) {
-    console.log('SaluteCSS Error: Your Configuration File is Invalid')
+    console.log(`SaluteCSS Error: ${err}`)
   }
 }
 

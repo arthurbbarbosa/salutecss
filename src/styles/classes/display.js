@@ -5,6 +5,7 @@
 module.exports = {
   'block': 'display: block',
   'inline': 'display: inline',
+  'hidden': 'display: none',
   'flex': 'display: flex',
   'grid': 'display: grid',
 

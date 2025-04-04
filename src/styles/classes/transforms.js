@@ -4,9 +4,8 @@
  */
 module.exports = {
   'rotate-[value]': (value) => `rotate: ${value}`,
-  
+
   'transform-[value]': (value) => `transform: ${value}`,
 
-  '\-translate-[value]': (value) => `translate: ${value}`,
   'translate-[value]': (value) => `translate: ${value}`
 }

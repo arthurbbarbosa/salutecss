@@ -25,5 +25,4 @@ module.exports = {
   'font-black': 'font-weight: 900',
 
   'line-height-[value]': (value) => `line-height: ${value}`,
-  '\-line-height-[value]': (value) => `line-height: -${value}`,
 }

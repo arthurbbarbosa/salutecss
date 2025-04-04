@@ -1,5 +1,5 @@
 function resolveCSSClass(className) {
-  return className.replace(/[\[\]:\-#()\/\+\*\,\.]/g, '\\$&')
+  return className.replace(/[\[\]:\-#()\/\+\*\,\.\%]/g, '\\$&')
 }
 
 function removeBrackets(className) {
@@ -7,7 +7,7 @@ function removeBrackets(className) {
 }
 
 function valueToPrimitiveValue(className) {
-  return className.replace(/\[(.*?)\]/g, '[value]')
+  return className.replace(/\[(.*)\]/g, '[value]')
 }
 
 function getValue(className) {

@@ -3,7 +3,6 @@
  * @link https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_text
  */
 module.exports = {
-  '\-letter-spacing-[value]': (value) => `letter-spacing: -${value}`,
   'letter-spacing-[value]': (value) => `letter-spacing: ${value}`,
 
   'text-center': 'text-align: center',

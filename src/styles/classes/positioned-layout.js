@@ -19,6 +19,5 @@ module.exports = {
   'to-right': 'float: right',
   'to-left': 'float: left',
 
-  '\-index-[value]': (value) => `z-index: -${value}`,
   'index-[value]': (value) => `z-index: ${value}`
 }

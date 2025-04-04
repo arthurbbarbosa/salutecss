@@ -25,6 +25,8 @@ module.exports = {
   'border-color-[value]': (value) => `border-right-color: ${value}`,
   'border-right-[value]': (value) => `border-right: ${value}`,
 
+  'border-spacing-[value]': (value) => `border-spacing: ${value}`,
+
   'round-[value]': (value) => `border-radius: ${value}`,
 
   'shadow-[value]': (value) => `box-shadow: ${value}`
