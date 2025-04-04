@@ -12,9 +12,8 @@ function build(args) {
   try {
     const { input, output = 'salute.css', defer = [] } = args?.input !== undefined ? args : resolveConfigFile()
 
-    const stylesheet = globSync(input)
-      .map(file => parseStyle(readFileSync(resolve(file), 'utf-8'), defer))
-      .join('')
+    const file = globSync(input).map((file) => readFileSync(resolve(file), 'utf-8')).join('')
+    const stylesheet = parseStyle(file, defer)
 
     writeFileSync(resolve(output), stylesheet)
   } catch(err) {
