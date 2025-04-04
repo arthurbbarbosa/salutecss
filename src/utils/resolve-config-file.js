@@ -1,8 +1,5 @@
 const { resolve } = require('node:path')
 
-/**
- * @type {import('../../index').resolveConfigFile}
- */
 function resolveConfigFile() {
   const config = require(resolve(process.cwd(), 'salute.config.js'))
 

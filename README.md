@@ -1,9 +1,6 @@
 <p align="center"><img src="./assets/logo.png" width="400" align="center" /></p>
 <p align="center">A enchanced, lightweight and fast utility-first CSS</p>
 
-> [!NOTE]
-> This project is under development and is being carried out independently.
-
 ## Usage
 ```shell
 $ npm install salutecss
@@ -13,7 +10,7 @@ $ salute build
 ## Benchmarking
 | Library | Compile Time (Ms) |
 | ------- | ------- |
-| SaluteCSS | ~ 7ms |
+| SaluteCSS | ~ 2ms |
 | TailwindCSS | ~ 50ms |
 
 ## Salute CLI
@@ -41,10 +38,6 @@ Examples:
 
 ## Using
 - Modern-Normalize ([Click Here](https://github.com/sindresorhus/modern-normalize))
-
-## Todo
-- Create a native glob method
-- Documentation (Under Development - Coming Soon)
 
 ## Contributing
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.

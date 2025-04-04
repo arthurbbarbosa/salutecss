@@ -5,9 +5,6 @@ const { parseMediaQuery } = require('./styles/media-query.js')
 const { parseSelector } = require('./styles/selectors.js')
 const { parseClass } = require('./styles/classes.js')
 
-/**
- * @type {import('../../../index.d.ts').parseStyle}
- */
 function parseStyle(style, defer) {
   const classesName = Array.from(
     new Set(

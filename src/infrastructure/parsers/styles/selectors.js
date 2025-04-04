@@ -1,9 +1,6 @@
 const { classes } = require('../../../styles/index.js')
 const { resolveCSSClass, valueToPrimitiveValue, getValue } = require('../../../utils/resolve-css-class.js')
 
-/**
- * @type {import('../../../../index').parseSelector}
- */
 function parseSelector(className) {
   const regex = className.match(/:(.*?):\[(.*)\]/)
 
