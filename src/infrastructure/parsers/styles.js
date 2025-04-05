@@ -8,7 +8,7 @@ const { parseClass } = require('./styles/classes.js')
 function parseStyle(style, defer) {
   const classesName = Array.from(
     new Set(
-      [...style.matchAll(/(className|class)=("|')(.+?)\2/g)]
+      [...style.matchAll(/(className|class)=("|'|{`)(.+?)("|'|`})/g)]
         .flatMap((match) => match[3].split(' '))
         .concat(defer)
     )
