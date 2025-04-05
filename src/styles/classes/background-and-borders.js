@@ -27,6 +27,9 @@ module.exports = {
 
   'border-spacing-[value]': (value) => `border-spacing: ${value}`,
 
+  'table-collapse': 'border-collapse: collapse',
+  'table-separate': 'border-collapse: separate',
+
   'round-[value]': (value) => `border-radius: ${value}`,
 
   'shadow-[value]': (value) => `box-shadow: ${value}`
